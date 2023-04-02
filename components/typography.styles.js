@@ -10,9 +10,12 @@ export const Header = styled.h1.attrs((props) => ({
   className: noto.className,
 }))`
   text-align: center;
-  font-weight: 300;
+  font-weight: ${(props) => props.weight || "300"};
+  font-size: ${(props) => props.size || "55px"};
 `;
+
 export const Text = styled.p`
-  text-align: center;
-  font-weight: 400;
+  text-align: ${(props) => props.left || "center"};
+  font-weight: ${(props) => props.weight || "400"};
+  font-size: ${(props) => props.size || "16px"};
 `;

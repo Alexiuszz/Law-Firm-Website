@@ -8,15 +8,19 @@ function BackgroundSlider({
   children,
   currImg,
   imageUrls,
+  height,
+  width,
+  bgMask,
   multi = true,
 }) {
   const [images, isImageLoaded] = useImagePreloader(imageUrls);
   return (
-    <StyledSlider>
+    <StyledSlider height={height} width={width}>
       {children}
       {imageUrls.map((url, i) =>
         isImageLoaded(url) ? (
           <StyledSlide
+            bgMask={bgMask}
             image={images[i].src}
             key={i}
             className={
@@ -32,7 +36,7 @@ function BackgroundSlider({
         ) : (
           <ImagePlaceHolder
             key={i}
-            className={multi && i === 0 ? "multi" : ""}
+            className={multi && i === 0 ? "multi" : "multi"}
           />
         )
       )}

@@ -7,4 +7,6 @@ export const font_color_primary = `#777`
 export const light_blue = `#D5E9FD`
 export const brown2 = `#764C24`
 
+export const smallHeader = `28px`
+
 

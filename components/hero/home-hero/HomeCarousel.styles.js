@@ -20,14 +20,15 @@ export const HomeHero = styled.div`
       #91b5fc 50%,
       #fff 50%
     );
-    border: solid 1px #fff;
-    border-radius: 8px;
     color: #fff;
     font-size: 14px;
+    border: solid 1px #fff;
+    border-radius: 8px;
     margin: 0 auto;
     margin-top: 30px;
     padding: 14px;
   }
+  
 
   .slideButton {
     display: flex;

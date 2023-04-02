@@ -6,12 +6,13 @@ export const StyledServiceCard = styled.div`
   flex-direction: column;
   width: 224px;
   height: 170px;
-  box-shadow: 2px 10px 5px #ccc;
+  box-shadow: 2px 6px 10px #ccc;
   padding: 10px;
   padding-top: 30px;
   background-color: #eef0f9d5;
-  user-select: "none";
-  margin: 0px 10px; 
+  user-select: none;
+  margin: 10px 10px;
+  border-radius: 5px; 
   && > h1 {
     font-size: 16px;
     font-weight: 500;

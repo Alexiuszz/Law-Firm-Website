@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { centerContent } from "../../styles/style_mixins";
 
 export const Button = styled.button.attrs((props) => ({
-        className: props.className,
-      }))`
+  className: props.className,
+}))`
   ${centerContent};
   font-family: inherit;
   font-weight: 600;
@@ -19,8 +19,15 @@ export const Button = styled.button.attrs((props) => ({
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease-in-out;  
-
+  transition: all 0.3s ease-in-out;
+  a {
+    background-image: linear-gradient(
+      to right,
+      #91b5fc,
+      #91b5fc 50%,
+      #fff 50%
+    );
+  }
   &:hover {
     background-position: 0;
   }
