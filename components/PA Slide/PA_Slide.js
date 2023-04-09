@@ -6,8 +6,8 @@ import "react-horizontal-scrolling-menu/dist/styles.css";
 import { LeftArrow, RightArrow } from "../buttons/Arrows/Arrows";
 import ServiceCard from "../cards/service-card/ServiceCard";
 import useDrag from "../hooks/useDrag";
-import { Header, Text } from "../typography.styles";
 import { Slider } from "./PA_Slide.styles";
+import { useInView } from "react-intersection-observer";
 
 const services = [
   {
@@ -79,7 +79,7 @@ const Arrows = (texts) => (
     </div>
   </div>
 );
-function Slide({texts}) {
+function Slide({ texts }) {
   const router = useRouter();
   const { dragStart, dragStop, dragMove, dragging } = useDrag();
   const handleDrag =
@@ -96,8 +96,12 @@ function Slide({texts}) {
     }
     router.push(link);
   };
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: .5,
+  });
   return (
-    <Slider onMouseLeave={dragStop}>
+    <Slider ref={ref} inView={inView} onMouseLeave={dragStop}>
       <ScrollMenu
         Header={Arrows(texts)}
         onWheel={onWheel}

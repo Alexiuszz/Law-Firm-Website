@@ -6,6 +6,7 @@ export const StyledSlider = styled.div`
   position: relative; 
   width: ${(props) => props.width || "100vw"};
   height: ${(props) => props.height || "100vh"};
+  min-height: ${(props) => !props.height && "670px"};
   ${centerContent};
   .currImg.currImg {
     transform: translateX(0vw);

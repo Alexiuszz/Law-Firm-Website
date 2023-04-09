@@ -4,10 +4,15 @@ import BackgroundSlider from "../../../components/backgroundSlider/BackgroundSli
 import { Button } from "../../../components/buttons/Button";
 import { Header } from "../../../components/typography.styles";
 import { StyledSubHero } from "./SubHero.styles";
+import { useInView } from "react-intersection-observer";
 
 function SubHero() {
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: .6,
+  });
   return (
-    <StyledSubHero>
+    <StyledSubHero ref={ref}>
       <BackgroundSlider
         imageUrls={[
           "https://ikwueto.s3.amazonaws.com/images/subHero.png",
@@ -17,7 +22,7 @@ function SubHero() {
         height="400px"
         bgMask={true}
       >
-        <div className="heroContent">
+        <div className={`heroContent ${!inView && "inView"}`}>
           <Header>
             “Striving to attain optimum client satisfaction with the
             aid of the due process of law”

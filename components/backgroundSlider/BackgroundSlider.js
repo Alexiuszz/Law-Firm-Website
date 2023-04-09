@@ -15,12 +15,13 @@ function BackgroundSlider({
 }) {
   const [images, isImageLoaded] = useImagePreloader(imageUrls);
   return (
-    <StyledSlider height={height} width={width}>
+    <StyledSlider   height={height} width={width}>
       {children}
       {imageUrls.map((url, i) =>
         isImageLoaded(url) ? (
           <StyledSlide
             bgMask={bgMask}
+            inView
             image={images[i].src}
             key={i}
             className={

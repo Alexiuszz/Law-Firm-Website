@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Layout from "../components/layout/Layout";
 
 function About() {
   return (
-    <div>About</div>
-  )
+    <Layout>
+      <main className="mainContent">
+        <div>About</div>
+      </main>
+    </Layout>
+  );
 }
 
-export default About
+export default About;

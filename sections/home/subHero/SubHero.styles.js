@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
 export const StyledSubHero = styled.div`
-margin-top: 20px;
+  margin-top: 20px;
+  .inView {
+    transform: rotateY(60deg) translateZ(-200px);
+    opacity: 0;
+  }
   .heroContent {
     z-index: 1;
     color: #fff;
     width: 500px;
+    transition: all 2s;
     h1 {
       font-size: 28px;
       font-weight: 500;
